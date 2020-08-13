@@ -21,6 +21,6 @@ public class PokemonActivity extends AppCompatActivity {
         numberTextView = findViewById(R.id.pokemon_number);
 
         nameTextView.setText(name);
-        numberTextView.setText(Integer.toString(number));
+        numberTextView.setText(String.format("#%03d", number));
     }
 }

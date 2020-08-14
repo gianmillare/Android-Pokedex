@@ -68,8 +68,9 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
                     JSONArray results = response.getJSONArray("results");
                     for (int i = 0; i < results.length(); i++) {
                         JSONObject result = results.getJSONObject(i);
+                        String name = result.getString("name");
                         pokemon.add(new Pokemon(
-                                result.getString("name"),
+                                name.substring(0, 1).toUpperCase() + name.substring(1),
                                 result.getString("url")
                         ));
                     }

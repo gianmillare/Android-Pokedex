@@ -1,5 +1,6 @@
 package io.gianmillare.pokedex;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,18 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
             super(view);
             containerView = view.findViewById(R.id.pokedex_row);
             textView = view.findViewById(R.id.pokedex_row_text_view);
+
+            containerView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Pokemon current = (Pokemon) containerView.getTag();
+                    Intent intent = new Intent(view.getContext(), PokemonActivity.class);
+                    intent.putExtra("name", current.getName());
+                    intent.putExtra("number", current.getNumber());
+
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
     }
 
@@ -41,6 +54,8 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
     public void onBindViewHolder(@NonNull PokedexViewHolder holder, int position) {
         Pokemon current = pokemon.get(position);
         holder.textView.setText(current.getName());
+
+        holder.containerView.setTag(current);
     }
 
     @Override

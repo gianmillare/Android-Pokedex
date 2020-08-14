@@ -1,5 +1,6 @@
 package io.gianmillare.pokedex;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,9 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +52,12 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
     }
 
     private List<Pokemon> pokemon = new ArrayList<>();
+    private RequestQueue requestQueue;
+
+    PokedexAdapter(Context context) {
+        requestQueue = Volley.newRequestQueue(context);
+        loadPokemon();
+    }
 
     public void loadPokemon() {
         String url = "https://pokeapi.co/api/v2/pokemon/?limit=151";
@@ -74,6 +83,8 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
                 Log.e("cs50", "Pokemon List Error");
             }
         });
+
+        requestQueue.add(request);
     }
 
     @NonNull

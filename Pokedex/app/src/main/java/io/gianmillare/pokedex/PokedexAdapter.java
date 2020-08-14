@@ -40,7 +40,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
                     Pokemon current = (Pokemon) containerView.getTag();
                     Intent intent = new Intent(view.getContext(), PokemonActivity.class);
                     intent.putExtra("name", current.getName());
-                    intent.putExtra("number", current.getNumber());
+//                    intent.putExtra("number", current.getNumber());
 
                     view.getContext().startActivity(intent);
                 }
@@ -57,6 +57,13 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
             public void onResponse(JSONObject response) {
                 try {
                     JSONArray results = response.getJSONArray("results");
+                    for (int i = 0; i < results.length(); i++) {
+                        JSONObject result = results.getJSONObject(i);
+                        pokemon.add(new Pokemon(
+                                result.getString("name"),
+                                result.getString("url")
+                        ));
+                    }
                 } catch (JSONException e) {
                     Log.e("cs50", "Json error", e);
                 }

@@ -73,6 +73,7 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
                                 result.getString("url")
                         ));
                     }
+                    notifyDataSetChanged();
                 } catch (JSONException e) {
                     Log.e("cs50", "Json error", e);
                 }

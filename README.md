@@ -7,6 +7,8 @@ Personally, this was my very first Android app, as well as my very first attempt
 
 Skills used: Java, API's, JSON, Android Studio, Mobile app design (UX/UI Design).
 
+Gian Millare's Repository for CS50: Introduction to Computer Science by HarvardX ---> [Visit Repository](https://github.com/gianmillare/CS50-Introduction-to-Computer-Science)
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 Preview #1: Below is the Home page displaying a list of Pokemon. Users may click a Pokemon to show another page displaying its information.

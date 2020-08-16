@@ -7,7 +7,7 @@ Personally, this was my very first Android app, as well as my very first attempt
 
 Skills used: Java, API's, JSON, Android Studio, Mobile app design (UX/UI Design).
 
-Gian Millare's Repository for CS50: Introduction to Computer Science by HarvardX ---> [Visit Repository](https://github.com/gianmillare/CS50-Introduction-to-Computer-Science)
+Gian Millare's Repository for **_CS50: Introduction to Computer Science by HarvardX_** ---> [Visit Repository](https://github.com/gianmillare/CS50-Introduction-to-Computer-Science)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
